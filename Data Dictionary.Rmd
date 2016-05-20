@@ -1,0 +1,21 @@
+---
+title: "Data Dictionary"
+author: "Saeid Abolfazli (PhD)"
+date: "May 20, 2016"
+output: html_document
+---
+
+#AUTOMATING REVIEWS IN MEDICINE
+
+The medical literature is enormous. Pubmed, a database of medical publications maintained by the U.S. National Library of Medicine, has indexed over 23 million medical publications. Further, the rate of medical publication has increased over time, and now there are nearly 1 million new publications in the field each year, or more than one per minute.
+
+The large size and fast-changing nature of the medical literature has increased the need for reviews, which search databases like Pubmed for papers on a particular topic and then report results from the papers found. While such reviews are often performed manually, with multiple people reviewing each search result, this is tedious and time consuming. In this problem, we will see how text analytics can be used to automate the process of information retrieval.
+
+The dataset consists of the titles (variable title) and abstracts (variable abstract) of papers retrieved in a Pubmed search. Each search result is labeled with whether the paper is a clinical trial testing a drug therapy for cancer (variable trial). These labels were obtained by two people reviewing each search result and accessing the actual paper if necessary, as part of a literature review of clinical trials testing drug therapies for advanced and metastatic breast cancer.
+
+```{r}
+file <- file.path("data","clinical_trial.csv")
+trial <- read.csv(file, stringsAsFactors = FALSE)
+summary(trial)
+
+```
